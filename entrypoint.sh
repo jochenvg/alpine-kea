@@ -6,7 +6,7 @@ case $1 in
 		kea-admin db-upgrade mysql -h $KEA_ADMIN_DB_HOST -u $KEA_ADMIN_DB_USER -n $KEA_ADMIN_DB_NAME
 		;;
 	dhcp4)
-		kea-dhcp4 -d -c /etc/kea/kea-dhcp4.conf
+		exec kea-dhcp4 -d -c /etc/kea/kea-dhcp4.conf
 		;;
 	*)
 		exec "$@"
